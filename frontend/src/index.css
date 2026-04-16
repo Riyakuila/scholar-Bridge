@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* This adds your custom brand colors to v4 */
+  --color-brand-50: #f5f7ff;
+  --color-brand-100: #ebf0fe;
+  --color-brand-200: #ced9fd;
+  --color-brand-300: #a1b6fb;
+  --color-brand-400: #6d89f7;
+  --color-brand-500: #4358f1;
+  --color-brand-600: #2c39e5;
+  --color-brand-700: #242cc7;
+  --color-brand-800: #2227a1;
+  --color-brand-900: #212680;
+
+  /* This adds the slow bounce animation */
+  --animate-bounce-slow: bounce-slow 3s infinite;
+
+  @keyframes bounce-slow {
+    0%, 100% { 
+      transform: translateY(-5%); 
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1); 
+    }
+    50% { 
+      transform: translateY(0); 
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1); 
+    }
+  }
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Shimmer animation for skeleton loaders */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Line clamp utilities */
+.line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+.line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
